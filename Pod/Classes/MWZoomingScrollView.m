@@ -169,7 +169,8 @@
     if (![_photo respondsToSelector:@selector(emptyImage)] || !_photo.emptyImage) {
         if (!_loadingError) {
             _loadingError = [UIImageView new];
-            _loadingError.image = [UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/ImageError" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]];
+            UIImage * errorImage = [_photo retryImage]?:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/ImageError" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]];
+            _loadingError.image = errorImage;
             _loadingError.userInteractionEnabled = NO;
             _loadingError.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin |
             UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
