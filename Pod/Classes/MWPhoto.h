@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL emptyImage;
 @property (nonatomic) BOOL isVideo;
 @property (nonatomic, strong, readonly) NSURL *photoURL;
-@private  (nonatomic, strong) UIImage * retryImage;
+@property (nonatomic, strong) UIImage * retryImage;
 
 + (MWPhoto *)photoWithImage:(UIImage *)image;
 + (MWPhoto *)photoWithURL:(NSURL *)url;
